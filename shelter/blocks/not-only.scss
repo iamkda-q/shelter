@@ -1,0 +1,42 @@
+@import './constants.scss';
+
+.not-only {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__info {
+        width: 460px;
+    }
+    
+    &__title {
+        margin: 0 {
+            bottom: 42px;
+        }
+        width: 310px;
+        @include text-style($georgia, 44px, 130%);
+    }
+
+    &__subtitle {
+        margin: 0 {
+            bottom: 42px;
+        }
+        @include text-style($arial, 15px, 160%, $color-dark-s);
+    }
+
+    &__button {
+        background-color: $color-primary;
+        border: none {
+            radius: 100px;
+        }
+        padding: 15px 45px;
+        @include text-style($georgia, 17px, 130%, $color-dark-3xl);
+        letter-spacing: 0.06em;
+    }
+
+    &__figure {
+        width: 698px;
+        height: 728px;
+        object-fit: cover;
+    }
+}

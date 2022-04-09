@@ -1,12 +1,22 @@
+@import './constants.scss';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .page {
     max-width: 1280px;
     min-width: 320px;
-    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-    linear-gradient(0deg, #211F20, #211F20);
-    ;
+    background: $start-screen-gradient;
     margin: 0 auto;
-    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    // display: grid;
+
+
+    .main {
+        width: (1200%/1280 * 100);
+        margin: 0 auto;
+    }
 }
