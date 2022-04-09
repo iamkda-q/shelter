@@ -1,0 +1,7 @@
+@import './constants.scss';
+
+.footer {
+    &__title {
+        @include title(280px, white, start);
+    }
+}

@@ -1,15 +1,11 @@
 @import "./constants.scss";
 
 .about {
-    width: 100vw;
-    margin-left: calc(calc(100vw - 100%) / -2);
-    background-color: white;
-
+    @include bg-color(white);
     &__container {
-        width: (1280px);
+        width: 1280px;
         margin: 0 auto;
         display: flex;
-        // justify-content: space-between;
         align-items: center;
     }
     &__article {
@@ -21,9 +17,7 @@
         margin: 0 {
             bottom: 25px;
         }
-        width: 370px;
-        @include text-style($georgia, 35px, 130%, $color-dark-l);
-        letter-spacing: 0.06em;
+        @include title(370px, $color-dark-l, start);
     }
 
     &__text {

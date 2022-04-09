@@ -1,0 +1,18 @@
+@import './constants.scss';
+
+.donation {
+    @include bg-color($color-light-l);
+    &__container {
+        width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 40px 100px;
+    }
+
+    &__title {
+        @include title(300px, $color-dark-l, start);
+    }
+
+}
