@@ -110,6 +110,7 @@
         padding: 15px 45px;
         @include buttons-border;
         transition: background-color 0.2s linear;
+        cursor: pointer;
     }
 
     &__rest {
