@@ -2,10 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ghpages = require("gh-pages");
-ghpages.publish("dist", {
-    dest: "shelter/",
-});
 
 module.exports = [
     {
@@ -43,6 +39,10 @@ module.exports = [
                         "sass-loader",
                     ],
                 },
+                {
+                    test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+                    type: "asset/resource",
+                },
             ],
         },
     },
@@ -79,6 +79,10 @@ module.exports = [
                         "css-loader",
                         "sass-loader",
                     ],
+                },
+                {
+                    test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+                    type: "asset/resource",
                 },
             ],
         },
