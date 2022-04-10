@@ -35,6 +35,8 @@
     }
 
     &__card {
+
+        @include button-hover;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -42,6 +44,7 @@
         height: 43px;
         background-color: $color-primary;
         border-radius: 9px;
+        
 
         #{$this}__card-icon {
             width: 30px;
