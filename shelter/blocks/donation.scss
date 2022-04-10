@@ -1,18 +1,67 @@
 @import './constants.scss';
 
 .donation {
+
+    $this: &;
+
     @include bg-color($color-light-l);
+
     &__container {
         width: 1280px;
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        justify-content: center;
         align-items: center;
+        grid-template-columns: fit-content(505px) fit-content(380px);
+        grid-template-rows: repeat(4, minmax(min-content, max-content));
+        column-gap: 30px;
+        row-gap: 20px;
+        grid-template-areas: 
+        "donation-dog title"
+        "donation-dog bank-info"
+        "donation-dog card"
+        "donation-dog legal";
         padding: 80px 40px 100px;
     }
 
     &__title {
+        grid-area: title;
         @include title(300px, $color-dark-l, start);
+    }
+
+    &__bank-info {
+        @include text-style($georgia, 15px, 110%, $color-dark-l);
+        letter-spacing: 0.06em;
+    }
+
+    &__card {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 350px;
+        height: 43px;
+        background-color: $color-primary;
+        border-radius: 9px;
+
+        #{$this}__card-icon {
+            width: 30px;
+            height: 23px;
+            object-fit: cover;
+        }
+
+        #{$this}__numbers {
+            @include text-style($arial, 20px, 115%, $color-dark-l);
+            letter-spacing: 0.06em;
+        }
+    }
+
+    &__legal {
+        @include text-style($arial, 15px, 160%, $color-dark-m);
+    }
+
+    &__figure {
+        grid-area: donation-dog;
+        object-fit: cover;
     }
 
 }
