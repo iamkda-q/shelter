@@ -1,7 +1,46 @@
-@import './constants.scss';
+@import "./constants.scss";
 
 .footer {
-    &__title {
-        @include title(280px, white, start);
+    $this: &;
+
+    width: 100%;
+    padding: 40px 40px 0;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+
+    &__info {
+        width: 280px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-auto-flow: column;
+        gap: 30px 160px;
+        align-items: center;
+        #{$this}__title {
+            @include title(280px, white, start);
+        }
+
+        #{$this}__wrapper {
+            display: flex;
+            align-items: center;
+            
+            #{$this}__icon {
+                margin-right: 20px;
+                object-fit: contain;
+            }
+    
+            #{$this}__content {
+                @include text-style($georgia, 20px, 115%, $color-primary);
+                letter-spacing: 0.06em;
+            }
+        }
+    }
+
+    &__photo {
+        width: 300px;
+        height: 310px;
+        object-fit: cover;
     }
 }
