@@ -1,14 +1,12 @@
 @import "./constants.scss";
 
 .header {
-    width: (1200%/1280 * 100);
+    width: 100%;
     min-height: 60px;
-    margin: 60px auto;
+    padding: 30px 40px;
     $this: &;
 
     &__grid {
-        padding: 0;
-        margin: 0;
         list-style: none;
         align-items: center;
         justify-items: start;
@@ -79,5 +77,10 @@
                 @include text-style($arial, 15px, (24/15 * 100%), $color-dark-3xl);
             }
         }
+    }
+
+    &_sticky {
+        position: sticky;
+        top: 0;
     }
 }
