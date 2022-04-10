@@ -1,0 +1,40 @@
+@import "./constants.scss";
+
+.about {
+    $this: &;
+
+    @include bg-color(white);
+    &__container {
+        width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        #{$this}__article {
+            width: 460px;
+            margin-right: 215px;
+
+            #{$this}__title {
+                margin: 0 {
+                    bottom: 25px;
+                }
+                @include title(370px, $color-dark-l, start);
+            }
+
+            #{$this}__text {
+                margin: 0 {
+                    bottom: 25px;
+                }
+                width: 430px;
+                @include text-style($arial, 15px, 160%, $color-dark-xl);
+            }
+        }
+
+        #{$this}__figure {
+            margin: 80px 120px 100px 215px;
+            width: 300px;
+            height: 408px;
+            object-fit: cover;
+        }
+    }
+}

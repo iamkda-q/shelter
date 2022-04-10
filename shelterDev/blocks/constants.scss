@@ -1,0 +1,48 @@
+$color-light-s: rgba(250, 250, 250, 1);
+$color-dark-s: rgba(205, 205, 205, 1);
+$color-primary: rgba(241, 205, 179, 1);
+$color-primary-light: rgba(253, 220, 196, 1);
+$color-dark-3xl: rgba(41, 41, 41, 1);
+$color-dark-l: rgba(84, 84, 84, 1);
+$color-dark-xl: rgba(76, 76, 76, 1);
+$color-light-l: rgba(246, 246, 246, 1);
+$color-dark-m: rgba(178, 178, 178, 1);
+$start-screen-gradient: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+linear-gradient(0deg, #211F20, #211F20);
+
+$arial: "Arial";
+$georgia: "Georgia";
+
+@mixin text-style($family, $size, $line-height, $color: white) {
+    font: {
+        family: $family, sans-serif;
+        weight: 400;
+        size: $size;
+    }
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin title ($width, $color, $align) {
+    width: $width;
+    @include text-style($georgia, 35px, 130%, $color);
+    letter-spacing: 0.06em;
+    text-align: $align;
+}
+
+
+@mixin bg-color($color) {
+    width: 100vw;
+    margin-left: calc(calc(100vw - 100%) / -2);
+    background: $color;
+}
+
+@mixin button-hover {
+    transition: background-color 0.2s linear;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-primary-light;
+    }
+}
+
+

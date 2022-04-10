@@ -1,0 +1,51 @@
+@import "./constants.scss";
+
+.help {
+    $this: &;
+
+    @include bg-color(white);
+    &__container {
+        width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 40px 100px;
+    }
+
+    &__title {
+        @include title(320px, $color-dark-l, center);
+    }
+
+    &__categories {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style: none;
+
+        #{$this}__category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #{$this}__icon {
+                width: 240px;
+                height: 60px;
+                object-fit: contain;
+                margin: {
+                    bottom: 25px;
+                    top: 60px;
+                }
+            }
+    
+            #{$this}__icon-text {
+                margin: 0;
+                @include text-style($georgia, 20px, 115%, $color-dark-l);
+                text-align: center;
+                letter-spacing: 0.06em;
+            }
+        }
+
+
+    }
+}

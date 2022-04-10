@@ -1,0 +1,127 @@
+@import "./constants.scss";
+
+.our-friends {
+    @mixin buttons-border {
+        border: 2px solid $color-primary {
+            radius: 100px;
+        }
+        background: white;
+    }
+
+    @include bg-color($color-light-l);
+
+    $this: &;
+
+    &__container {
+        width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 40px 100px;
+    }
+
+    &__title {
+        @include title(400px, $color-dark-l, center);
+    }
+
+    &__slider {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__pets {
+        width: 100%;
+        padding: 60px 0 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    &__pet {
+        display: grid;
+        grid-template-rows: 270px 23px 52px;
+        row-gap: 30px;
+        justify-items: center;
+        align-items: center;
+        padding-bottom: 30px;
+        background-color: $color-light-s;
+        cursor: pointer;
+        margin-bottom: 30px;
+
+        &:hover {
+            #{$this}__pet-info {
+                background-color: $color-primary-light;
+            }
+        }
+    }
+
+    &__controls {
+        display: grid;
+        grid-template-columns: repeat(5, 52px);
+        gap: 20px;
+    }
+
+    &__slide {
+        width: 52px;
+        height: 52px;
+        @include buttons-border;
+        box-sizing: content-box;
+        border-radius: 50%;
+        @include button-hover;
+        @include text-style($georgia, 20px, 115%, $color-dark-3xl);
+
+        &_left {
+            background: url(/assets/icons/arrow-left.svg) center no-repeat;
+        }
+
+        &_right {
+            background: url(/assets/icons/arrow-left.svg) center no-repeat;
+            transform: rotate(0.5turn);
+        }
+
+        &_light {
+            background-color: $color-primary-light;
+        }
+
+        &_disabled {
+            color: $color-dark-s;
+            border: 2px solid $color-dark-s;
+            pointer-events: none;
+        }
+    }
+
+    &__pet-photo {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__pet-name {
+        @include text-style($georgia, 20px, (23/20 * 100%), $color-dark-l);
+        letter-spacing: 0.06em;
+    }
+
+    &__pet-info {
+        @include text-style($georgia, 17px, (130%), $color-dark-3xl);
+        letter-spacing: 0.06em;
+        padding: 15px 45px;
+        @include buttons-border;
+        transition: background-color 0.2s linear;
+    }
+
+    &__rest {
+        background-color: $color-primary;
+        border: none {
+            radius: 100px;
+        }
+        padding: 15px 45px;
+        @include text-style($georgia, 17px, 130%, $color-dark-3xl);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+
+        @include button-hover;
+    }
+}
