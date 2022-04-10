@@ -69,6 +69,8 @@
         width: 52px;
         height: 52px;
         @include buttons-border;
+        box-sizing: content-box;
+        border-radius: 50%;
         @include button-hover;
         @include text-style($georgia, 20px, 115%, $color-dark-3xl);
 

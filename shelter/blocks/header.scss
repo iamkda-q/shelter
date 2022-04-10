@@ -1,10 +1,14 @@
 @import "./constants.scss";
 
 .header {
-    width: 100%;
-    min-height: 60px;
-    padding: 30px 40px;
+    @include bg-color(url(/assets/images/noise_transparent.png));
+    padding:  30px 0;
     $this: &;
+
+    &__container {
+        width: 1280px - 40px * 2;
+        margin: 0 auto;
+    }
 
     &__grid {
         list-style: none;
@@ -51,11 +55,6 @@
 
     &_light {
         @include bg-color(white);
-
-        #{$this}__container {
-            width: 1280px - 40px * 2;
-            margin: 0 auto;
-        }
 
         .logo {
             &__title {

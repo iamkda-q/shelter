@@ -1,12 +1,19 @@
 @import './constants.scss';
 
 .not-only {
-    width: 100%;
-    padding: 30px 40px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include bg-color(url(/assets/images/noise_transparent.png));
+
+    &__container {
+        width: 1280px - 40px * 2;
+        margin: 0 auto;
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
     &__info {
+        margin-top: 163px;
         width: 460px;
     }
     

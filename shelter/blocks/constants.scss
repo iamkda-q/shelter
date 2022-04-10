@@ -34,7 +34,7 @@ $georgia: "Georgia";
 @mixin bg-color($color) {
     width: 100vw;
     margin-left: calc(calc(100vw - 100%) / -2);
-    background-color: $color;
+    background: $color;
 }
 
 @mixin button-hover {

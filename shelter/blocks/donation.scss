@@ -57,7 +57,7 @@
     }
 
     &__legal {
-        @include text-style($arial, 15px, 160%, $color-dark-m);
+        @include text-style($arial, 12px, 150%, $color-dark-m);
     }
 
     &__figure {
