@@ -51,6 +51,7 @@
 
         #{$this}__numbers {
             @include text-style($arial, 20px, 115%, $color-dark-l);
+            text-decoration: none;
             letter-spacing: 0.06em;
         }
     }

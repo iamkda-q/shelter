@@ -18,23 +18,23 @@
         grid-auto-flow: column;
         gap: 30px 160px;
         align-items: center;
+        justify-items: start;
         #{$this}__title {
             @include title(280px, white, start);
         }
 
-        #{$this}__wrapper {
+        #{$this}__link {
             display: flex;
             align-items: center;
+            text-decoration: none;
+            @include text-style($georgia, 20px, 115%, $color-primary);
+            letter-spacing: 0.06em;
             
             #{$this}__icon {
                 margin-right: 20px;
                 object-fit: contain;
             }
-    
-            #{$this}__content {
-                @include text-style($georgia, 20px, 115%, $color-primary);
-                letter-spacing: 0.06em;
-            }
+
         }
     }
 

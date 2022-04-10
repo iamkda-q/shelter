@@ -1,4 +1,4 @@
-@import './constants.scss';
+@import "./constants.scss";
 
 .header {
     width: (1200%/1280 * 100);
@@ -11,6 +11,7 @@
         margin: 0;
         list-style: none;
         align-items: center;
+        justify-items: start;
         width: 100%;
         height: 100%;
         display: grid;
@@ -32,15 +33,50 @@
                 letter-spacing: 0.1em;
             }
         }
+    }
+
+    &__link {
+        text-decoration: none;
+        @include text-style($arial, 15px, (15/24 * 100%), $color-dark-s);
+        transition: color 0.2s linear;
+        &:hover {
+            color: $color-light-s;
+        }
+
+        &_checked {
+            @include text-style($arial, 15px, (24/15 * 100%), $color-light-s);
+            border: {
+                bottom: solid 3px $color-primary;
+            }
+        }
+    }
+
+    &_light {
+        @include bg-color(white);
+
+        #{$this}__container {
+            width: 1280px - 40px * 2;
+            margin: 0 auto;
+        }
+
+        .logo {
+            &__title {
+                @include text-style($georgia, 32px, 110%, $color-dark-l);
+            }
+
+            &__subtitle {
+                @include text-style($arial, 13px, (15/13 * 100%), $color-dark-3xl);
+            }
+        }
 
         #{$this}__link {
-            text-decoration: none;
-            @include text-style($arial, 15px, (15/24 * 100%), $color-dark-s);
+            @include text-style($arial, 15px, (15/24 * 100%), $color-dark-l);
+            &:hover {
+                color: $color-dark-3xl;
+            }
+    
             &_checked {
-                @include text-style($arial, 15px, (24/15 * 100%), $color-light-s);
-                border: {
-                    bottom: solid 3px $color-primary;
-                }
+                @include text-style($arial, 15px, (24/15 * 100%), $color-dark-3xl);
             }
         }
     }
