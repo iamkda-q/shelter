@@ -18,7 +18,7 @@
             <nav class="header__container">
                 <ul class="header__grid">
                     <li>
-                        <a href="#" class="logo">
+                        <a href="#" class="logo" title="Main page">
                             <h1 class="logo__title">Cozy House</h1>
                             <p class="logo__subtitle">
                                 Shelter for pets in Boston
@@ -28,22 +28,29 @@
                     <li>
                         <a
                             href="#about"
+                            title="About"
                             class="header__link header__link_checked"
                             >About the shelter</a
                         >
                     </li>
                     <li>
-                        <a href="#" data-pets class="header__link"
+                        <a
+                            href="#"
+                            data-pets
+                            class="header__link"
+                            title="Our pets"
                             >Our pets</a
                         >
                     </li>
                     <li>
-                        <a href="#help" class="header__link"
+                        <a href="#help" class="header__link" title="Help"
                             >Help the shelter</a
                         >
                     </li>
                     <li>
-                        <a href="#footer" class="header__link">Contacts</a>
+                        <a href="#footer" class="header__link" title="Contacts"
+                            >Contacts</a
+                        >
                     </li>
                 </ul>
             </nav>
@@ -61,7 +68,12 @@
                             will love you more than anybody else in the world,
                             you will see!
                         </h3>
-                        <a href="#our-friends" class="not-only__button">Make a friend</a>
+                        <a
+                            href="#our-friends"
+                            class="not-only__button"
+                            title="Our pets"
+                            >Make a friend</a
+                        >
                     </div>
                     <img
                         src="<%=require('../../assets/images/start-screen-puppy.png')%>"
@@ -149,7 +161,12 @@
                             class="our-friends__slide our-friends__slide_right"
                         ></button>
                     </div>
-                    <a href="#" data-pets class="our-friends__rest">
+                    <a
+                        href="#"
+                        data-pets
+                        class="our-friends__rest"
+                        title="Our pets"
+                    >
                         Get to know the rest
                     </a>
                 </div>
@@ -252,7 +269,11 @@
                             alt="Card's icon"
                             class="donation__card-icon"
                         />
-                        <a href="#donation" class="donation__numbers">
+                        <a
+                            href="#donation"
+                            class="donation__numbers"
+                            title="Cardpay"
+                        >
                             8380 2880 8028 8791 7435
                         </a>
                     </div>
@@ -269,57 +290,65 @@
 
         <footer id="footer" class="footer">
             <div class="footer__container">
-            <div class="footer__info">
-                <h2 class="footer__title">For questions and suggestions</h2>
-                <a href="mailto:" class="footer__link">
-                    <img
-                        src="<%=require('../../assets/icons/icon-email.svg')%>"
-                        alt=""
-                        class="footer__icon"
-                    />
-                    <p>email@shelter.com</p>
-                </a>
-                <a href="tel:136745677554" class="footer__link">
-                    <img
-                        src="<%=require('../../assets/icons/icon-phone.svg')%>"
-                        alt=""
-                        class="footer__icon"
-                    />
-                    <p>+13 674 567 75 54</p>
-                </a>
+                <div class="footer__info">
+                    <h2 class="footer__title">For questions and suggestions</h2>
+                    <a href="mailto:" class="footer__link" title="Send email">
+                        <img
+                            src="<%=require('../../assets/icons/icon-email.svg')%>"
+                            alt=""
+                            class="footer__icon"
+                        />
+                        <p>email@shelter.com</p>
+                    </a>
+                    <a
+                        href="tel:136745677554"
+                        class="footer__link"
+                        title="Call"
+                    >
+                        <img
+                            src="<%=require('../../assets/icons/icon-phone.svg')%>"
+                            alt=""
+                            class="footer__icon"
+                        />
+                        <p>+13 674 567 75 54</p>
+                    </a>
 
-                <h2 class="footer__title">We are waiting for your visit</h2>
-                <a
-                    href="https://goo.gl/maps/ZXoHohyzWx64g5AN9"
-                    target="blank"
-                    class="footer__link"
-                >
-                    <img
-                        src="<%=require('../../assets/icons/icon-marker.svg')%>"
-                        alt=""
-                        class="footer__icon"
-                    />
-                    <p>1 Central Street, Boston (entrance from the store)</p>
-                </a>
-                <a
-                    href="https://goo.gl/maps/rHVV5N8jDBR3c3SJ9"
-                    target="blank"
-                    class="footer__link"
-                >
-                    <img
-                        src="<%=require('../../assets/icons/icon-marker.svg')%>"
-                        alt=""
-                        class="footer__icon"
-                    />
-                    <p>18 South Park, London</p>
-                </a>
+                    <h2 class="footer__title">We are waiting for your visit</h2>
+                    <a
+                        href="https://goo.gl/maps/ZXoHohyzWx64g5AN9"
+                        target="blank"
+                        class="footer__link"
+                        title="Our location"
+                    >
+                        <img
+                            src="<%=require('../../assets/icons/icon-marker.svg')%>"
+                            alt=""
+                            class="footer__icon"
+                        />
+                        <p>
+                            1 Central Street, Boston (entrance from the store)
+                        </p>
+                    </a>
+                    <a
+                        href="https://goo.gl/maps/rHVV5N8jDBR3c3SJ9"
+                        target="blank"
+                        class="footer__link"
+                    >
+                        <img
+                            src="<%=require('../../assets/icons/icon-marker.svg')%>"
+                            alt=""
+                            class="footer__icon"
+                            title="Our location"
+                        />
+                        <p>18 South Park, London</p>
+                    </a>
+                </div>
+                <img
+                    src="<%=require('../../assets/images/footer-puppy.png')%>"
+                    alt="Puppy"
+                    class="footer__photo"
+                />
             </div>
-            <img
-                src="<%=require('../../assets/images/footer-puppy.png')%>"
-                alt="Puppy"
-                class="footer__photo"
-            />
-        </div>
         </footer>
     </body>
 </html>
