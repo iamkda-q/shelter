@@ -1,46 +1,70 @@
 @import "./constants.scss";
 
 .footer {
-    @include bg-color(url(/assets/images/noise_transparent.png));
-    padding-top: 40px;
-    $this: &;
+    background: (
+        url(../../assets/images/noise_transparent.png),
+        $start-screen-gradient
+    );
 
-    justify-content: space-between;
-    align-items: flex-start;
     &__container {
-        width: 1280px - 40px * 2;
+        max-width: 1280px;
         margin: 0 auto;
+        padding: 40px 40px 0;
         display: flex;
-        justify-content: space-between;
+        gap: 190px;
+        justify-content: flex-end;
         align-items: flex-start;
     }
 
-
     &__info {
-        width: 280px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, auto);
         grid-auto-flow: column;
-        gap: 30px 160px;
+        gap: 30px 156px;
         align-items: center;
         justify-items: start;
-        #{$this}__title {
-            @include title(280px, white, start);
+    }
+
+    &__title {
+        @include title(280px, white, start);
+        margin-top: 16px;
+    }
+
+    &__link {
+        display: block;
+        align-items: center;
+        text-decoration: none;
+        @include text-style($georgia, 20px, 115%, $color-primary);
+        letter-spacing: 0.06em;
+        position: relative;
+
+        @mixin icon($padding, $imageUrl) {
+            padding-left: $padding;
+
+            &::before {
+                position: absolute;
+                content: "";
+                width: 40px;
+                height: 32px;
+                left: 0;
+                top: 50%;
+                margin-top: -16px;
+                background: $imageUrl no-repeat
+                    center;
+            }
         }
 
-        #{$this}__link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            @include text-style($georgia, 20px, 115%, $color-primary);
-            letter-spacing: 0.06em;
-            
-            #{$this}__icon {
-                margin-right: 20px;
-                object-fit: contain;
-            }
+        &_email {
+            @include icon(60px, url(../../assets/icons/icon-email.svg));
+        }
 
+        &_phone {
+            @include icon(60px, url(../../assets/icons/icon-phone.svg) );
+        }
+
+        &_location {
+            @include icon(42px, url(../../assets/icons/icon-marker.svg) );
         }
     }
 

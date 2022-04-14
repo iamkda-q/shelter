@@ -3,9 +3,11 @@
 .help {
     $this: &;
 
+    background: white;
+
     @include bg-color(white);
     &__container {
-        width: 1280px;
+        max-width: 1280px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -18,34 +20,30 @@
     }
 
     &__categories {
+        padding-top: 60px;
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
         list-style: none;
+        gap: 55px 120px;
+    }
 
-        #{$this}__category {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    #{$this}__category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 
-            #{$this}__icon {
-                width: 240px;
-                height: 60px;
-                object-fit: contain;
-                margin: {
-                    bottom: 25px;
-                    top: 60px;
-                }
-            }
-    
-            #{$this}__icon-text {
-                margin: 0;
-                @include text-style($georgia, 20px, 115%, $color-dark-l);
-                text-align: center;
-                letter-spacing: 0.06em;
-            }
-        }
+    #{$this}__icon {
+        object-fit: contain;
+    }
 
-
+    #{$this}__icon-text {
+        margin: 0;
+        @include text-style($georgia, 20px, 115%, $color-dark-l);
+        text-align: center;
+        letter-spacing: 0.06em;
     }
 }

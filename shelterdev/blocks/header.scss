@@ -1,13 +1,14 @@
 @import "./constants.scss";
 
 .header {
-    @include bg-color(url(/assets/images/noise_transparent.png));
-    padding:  30px 0;
+    /* чтобы хедер был того же цвета что и not-only перекрваем его с помощью отриц margin => смотри not-only */
+    padding:  60px 0 30px;
     $this: &;
 
     &__container {
-        width: 1280px - 40px * 2;
+        max-width: 1280px;
         margin: 0 auto;
+        padding: 0 40px;
     }
 
     &__grid {
@@ -19,27 +20,12 @@
         display: grid;
         grid-template-columns: 1fr repeat(4, minmax(min-content, max-content));
         column-gap: 35px;
-        .logo {
-            text-decoration: none;
-            &__title {
-                margin: 0 {
-                    bottom: 10px;
-                }
-                @include text-style($georgia, 32px, 110%, $color-primary);
-                letter-spacing: 0.06em;
-            }
-
-            &__subtitle {
-                margin: 0;
-                @include text-style($arial, 13px, (15/13 * 100%));
-                letter-spacing: 0.1em;
-            }
-        }
     }
 
     &__link {
         text-decoration: none;
-        @include text-style($arial, 15px, (15/24 * 100%), $color-dark-s);
+        padding-bottom: 4px;
+        @include text-style($arial, 15px, (24/15 * 100%), $color-dark-s);
         transition: color 0.2s linear;
         &:hover {
             color: $color-light-s;
@@ -54,20 +40,11 @@
     }
 
     &_light {
-        @include bg-color(white);
-
-        .logo {
-            &__title {
-                @include text-style($georgia, 32px, 110%, $color-dark-l);
-            }
-
-            &__subtitle {
-                @include text-style($arial, 13px, (15/13 * 100%), $color-dark-3xl);
-            }
-        }
+        padding:  30px 0;
+        background: white;
 
         #{$this}__link {
-            @include text-style($arial, 15px, (15/24 * 100%), $color-dark-l);
+            @include text-style($arial, 15px, (24/15 * 100%), $color-dark-l);
             &:hover {
                 color: $color-dark-3xl;
             }

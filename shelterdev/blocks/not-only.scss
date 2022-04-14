@@ -1,12 +1,15 @@
 @import './constants.scss';
 
 .not-only {
-    @include bg-color(url(/assets/images/noise_transparent.png));
+    background: url(../../assets/images/noise_transparent.png), $start-screen-gradient;
+    background-repeat: repeat;
+    margin-top: -180px;
+    padding-top: 180px;
 
     &__container {
-        width: 1280px - 40px * 2;
+        max-width: 1280px;
         margin: 0 auto;
-        padding-top: 30px;
+        padding: 30px 40px 0;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -14,32 +17,34 @@
 
     &__info {
         margin-top: 163px;
-        width: 460px;
+        max-width: 460px;
     }
     
     &__title {
         margin: 0 {
             bottom: 42px;
         }
-        width: 310px;
+        max-width: 310px;
         @include text-style($georgia, 44px, 130%);
     }
 
     &__subtitle {
-        margin: 0 {
-            bottom: 42px;
-        }
+        margin-bottom: 42px;
         @include text-style($arial, 15px, 160%, $color-dark-s);
     }
 
     &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: $color-primary;
         text-decoration: none;
+        width: 207px;
+        height: 52px;
         border: none {
             radius: 100px;
         }
         @include button-hover;
-        padding: 15px 45px;
         @include text-style($georgia, 17px, 130%, $color-dark-3xl);
         letter-spacing: 0.06em;
     }

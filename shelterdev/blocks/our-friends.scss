@@ -8,21 +8,22 @@
         background: white;
     }
 
-    @include bg-color($color-light-l);
+    background: $color-light-l;
 
     $this: &;
 
     &__container {
-        width: 1280px;
+        max-width: 1280px;
         margin: 0 auto;
+        padding: 80px 40px 100px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 80px 40px 100px;
+        align-items: center; 
+        justify-content: space-between;
     }
 
     &__title {
-        @include title(400px, $color-dark-l, center);
+        @include title(380px, $color-dark-l, center);
     }
 
     &__slider {
@@ -37,7 +38,8 @@
         padding: 60px 0 30px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 90px;
         list-style: none;
     }
 
@@ -51,8 +53,11 @@
         background-color: $color-light-s;
         cursor: pointer;
         margin-bottom: 30px;
+        transition: box-shadow 0.3s linear;
 
         &:hover {
+            box-shadow: 0 0 50px 10px rgb(102, 94, 94);
+
             #{$this}__pet-info {
                 background-color: $color-primary-light;
             }
@@ -75,11 +80,11 @@
         @include text-style($georgia, 20px, 115%, $color-dark-3xl);
 
         &_left {
-            background: url(/assets/icons/arrow-left.svg) center no-repeat;
+            background: url(../../assets/icons/arrow-left.svg) center no-repeat;
         }
 
         &_right {
-            background: url(/assets/icons/arrow-left.svg) center no-repeat;
+            background: url(../../assets/icons/arrow-left.svg) center no-repeat;
             transform: rotate(0.5turn);
         }
 

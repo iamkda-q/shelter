@@ -1,0 +1,32 @@
+@import "./constants.scss";
+
+.logo {
+    $this: &;
+
+    text-decoration: none;
+    &__title {
+        margin: 0 {
+            bottom: 10px;
+        }
+        @include text-style($georgia, 32px, 110%, $color-primary);
+        letter-spacing: 0.06em;
+    }
+
+    &__subtitle {
+        margin-left: 4px;
+        @include text-style($arial, 13px, (15/13 * 100%));
+        letter-spacing: 0.1em;
+    }
+
+    &_light {
+        #{$this}__title {
+            @include text-style($georgia, 32px, 110%, $color-dark-l);
+        }
+    
+        #{$this}__subtitle {
+            @include text-style($arial, 13px, (15/13 * 100%), $color-dark-3xl);
+        }
+    }
+}
+
+

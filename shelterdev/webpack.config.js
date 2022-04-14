@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = [
     {
@@ -12,6 +12,7 @@ module.exports = [
         output: {
             path: path.resolve(__dirname, "dist/main"),
             filename: "script.js",
+            assetModuleFilename: '../assets/[hash][ext][query]'
         },
         plugins: [
             new MiniCssExtractPlugin({
@@ -27,7 +28,7 @@ module.exports = [
             //     filename: "pets.html",
             //     chunks:["pets"],
             // }),
-            new CleanWebpackPlugin(),
+            // new CleanWebpackPlugin(),
         ],
         module: {
             rules: [
@@ -54,6 +55,7 @@ module.exports = [
         output: {
             path: path.resolve(__dirname, "dist/pets"),
             filename: "script.js",
+            assetModuleFilename: '../assets/[hash][ext][query]'
         },
         plugins: [
             new MiniCssExtractPlugin({

@@ -1,20 +1,6 @@
-@font-face {
-    src: url("../../assets/fonts/Arial/Arial-Regular.woff") format("woff"),
-        url("../../assets/fonts/Arial/Arial-Regular.woff2") format("woff2");
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-}
-
-@font-face {
-    src: url("../../assets/fonts/Georgia/Georgia-Regular.woff") format("woff"),
-        url("../../assets/fonts/Georgia/Georgia-Regular.woff2") format("woff2");
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-}
-
+@import "../../assets/fonts/fonts.scss";
 @import "../../blocks/page.scss";
 @import "../../blocks/header.scss";
+@import "../../blocks/logo.scss";
 @import "../../blocks/our-friends.scss";
 @import "../../blocks/footer.scss";

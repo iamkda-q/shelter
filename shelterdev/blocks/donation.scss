@@ -1,13 +1,11 @@
-@import './constants.scss';
+@import "./constants.scss";
 
 .donation {
-
     $this: &;
-
-    @include bg-color($color-light-l);
+    background: $color-light-l;
 
     &__container {
-        width: 1280px;
+        max-width: 1280px;
         margin: 0 auto;
         display: grid;
         justify-content: center;
@@ -16,11 +14,11 @@
         grid-template-rows: repeat(4, minmax(min-content, max-content));
         column-gap: 30px;
         row-gap: 20px;
-        grid-template-areas: 
-        "donation-dog title"
-        "donation-dog bank-info"
-        "donation-dog card"
-        "donation-dog legal";
+        grid-template-areas:
+            "donation-dog title"
+            "donation-dog bank-info"
+            "donation-dog card"
+            "donation-dog legal";
         padding: 80px 40px 100px;
     }
 
@@ -35,27 +33,32 @@
     }
 
     &__card {
-
         @include button-hover;
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
         align-items: center;
         width: 350px;
         height: 43px;
         background-color: $color-primary;
         border-radius: 9px;
-        
+        position: relative;
+    }
 
-        #{$this}__card-icon {
+    &__numbers {
+        @include text-style($georgia, 20px, 115%, $color-dark-l);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        margin-right: 15px;
+
+        &::before {
+            position: absolute;
+            content: "";
             width: 30px;
             height: 23px;
-            object-fit: cover;
-        }
-
-        #{$this}__numbers {
-            @include text-style($arial, 20px, 115%, $color-dark-l);
-            text-decoration: none;
-            letter-spacing: 0.06em;
+            left: 15px;
+            top: 50%;
+            margin-top: -11px;
+            background: url(../../assets/icons/credit-card.svg) no-repeat center;
         }
     }
 
@@ -67,5 +70,4 @@
         grid-area: donation-dog;
         object-fit: cover;
     }
-
 }
