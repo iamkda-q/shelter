@@ -56,7 +56,7 @@
         margin: 0 {
             bottom: 42px;
         }
-        max-width: 300px;
+        max-width: 310px;
         @include text-style($georgia, 44px, 130%);
 
         @media screen and (max-width: 512px) {

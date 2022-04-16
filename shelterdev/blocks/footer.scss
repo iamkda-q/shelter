@@ -37,17 +37,17 @@
     &__info {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 120px repeat(2, 18px);
-        row-gap: 40px;
+        grid-template-rows: 120px repeat(2, 75px);
         justify-items: start;
         align-items: center;
 
         @media screen and (max-width: 1020px) {
-            grid-template-rows: 80px repeat(2, 40px);
+            grid-template-rows: 90px repeat(2, 34px);
+            row-gap: 40px;
         }
 
         @media screen and (max-width: 767px) {
-            grid-template-rows: 60px repeat(2, 35px);
+            grid-template-rows: 60px repeat(2, 38px);
             justify-items: center;
             row-gap: 40px;
         }
@@ -101,12 +101,29 @@
             @include icon(60px, url(../../assets/icons/icon-phone.svg));
 
             @media screen and (max-width: 767px) {
-                left: 10px;
+                padding-left: 48px;
+                &:last-of-type {
+                    &::before {
+                        left: -5px;
+                    }
+                }
             }
         }
 
         &_location {
             @include icon(42px, url(../../assets/icons/icon-marker.svg));
+
+            @media screen and (max-width: 767px) {
+                &:last-of-type {
+                    padding-left: 10px;
+
+                    &::before {
+                        left: -30px;
+                    }
+                }
+
+
+            }
         }
     }
 

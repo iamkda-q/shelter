@@ -1,14 +1,25 @@
 import './style.scss';
+import '../common/script.js';
 
-const href = document.location.href;
-const pathToPets = href.replace("pets", "main");
 
-const petsPointers = document.querySelectorAll("[data-main]");
 
-petsPointers.forEach(item => {
-    
-    item.href = item.href.replace("pets", "main");
-    console.log(item.href);
+document.querySelectorAll('a[href^="#"').forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let href = link.getAttribute("href").slice(1);
+
+        const scrollTarget = document.getElementById(href);
+
+        const topOffset = document.querySelector(".header").offsetHeight;
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+    });
 });
 
 console.log(

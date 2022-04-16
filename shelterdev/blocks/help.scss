@@ -47,8 +47,8 @@
         }
 
         @media screen and (max-width: 512px) {
-            padding-top: 42px;
-            grid-template-columns: repeat(2, auto);
+            padding-top: 40px;
+            grid-template-columns: repeat(2, 125px);
             gap: 30px (4000vw/320);
         }
     }

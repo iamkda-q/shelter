@@ -1,15 +1,21 @@
-import './style.scss';
+import "./style.scss";
+import '../common/script.js';
 
-console.log('Hallo');
+document.querySelectorAll('a[href^="#"').forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
 
-const href = document.location.href;
-const pathToPets = href.replace("main", "pets");
+        let href = link.getAttribute("href").slice(1);
 
-const petsPointers = document.querySelectorAll("[data-pets]");
+        const scrollTarget = document.getElementById(href);
 
-petsPointers.forEach(item => {
-    item.href = item.href.replace("main", "pets");
-    console.log(item.href);
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+
+        window.scrollBy({
+            top: elementPosition,
+            behavior: "smooth",
+        });
+    });
 });
 
 console.log(

@@ -31,6 +31,17 @@
         @media screen and (max-width: 767px) {
             padding: 42px 10px;
         }
+
+        &_friends-page {
+
+            @media screen and (max-width: 1279px) {
+                padding-bottom: 76px;
+            }
+
+            @media screen and (max-width: 767px) {
+                padding-bottom: 42px;
+            }
+        }
     }
 
     &__title {
@@ -42,28 +53,60 @@
         }
     }
 
+    &__pets {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 60px 0;
+        list-style: none;
+        gap: 30px 40px;
+        @media screen and (max-width: 1279px) {
+            justify-content: center;
+            padding: 30px 0 40px;
+        }
+        
+        @media screen and (max-width: 767px) {
+            padding-top: 42px;
+        }
+    }
+
     &__slider {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-    }
 
-    &__pets {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 60px 105px;
-        list-style: none;
+        #{$this}__pets {
+            flex-wrap: nowrap;
+            padding: {
+                left: 105px;
+                right: 105px;
+            }
 
-        @media screen and (max-width: 1120px) {
-            justify-content: center;
-            gap: 40px;
+            @media screen and (max-width: 1279px) {
+                justify-content: center;
+                padding: 60px 0;
+            }
+
+            @media screen and (max-width: 767px) {
+                padding: 42px 0 0;
+            }
         }
 
-        @media screen and (max-width: 767px) {
-            padding: 42px 0 0;
+        #{$this}__pet {
+            @media screen and (max-width: 1120px) {
+                &:nth-of-type(3n) {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+                &:nth-of-type(2n) {
+                    display: none;
+                }
+            }
         }
     }
 
@@ -76,7 +119,6 @@
         padding-bottom: 30px;
         background-color: $color-light-s;
         cursor: pointer;
-        // margin-bottom: 30px;
         transition: box-shadow 0.3s linear;
 
         &:hover {
@@ -87,14 +129,23 @@
             }
         }
 
-        @media screen and (max-width: 1120px) {
-            &:last-of-type {
+        @media screen and (max-width: 1259px) {
+            &:nth-of-type(8n) {
+                display: none;
+            }
+            &:nth-of-type(7n) {
                 display: none;
             }
         }
 
-        @media screen and (max-width: 767px) {
-            &:nth-of-type(2n) {
+        @media screen and (max-width: 599px) {
+            &:nth-of-type(6n) {
+                display: none;
+            }
+            &:nth-of-type(5n) {
+                display: none;
+            }
+            &:nth-of-type(4n) {
                 display: none;
             }
         }
@@ -104,11 +155,14 @@
         display: grid;
         grid-template-columns: repeat(5, 52px);
         gap: 20px;
+
+        @media screen and (max-width: 512px) {
+            gap: 10px;
+        }
     }
 
     &__slide {
         @include buttons-border;
-        box-sizing: content-box;
         border-radius: 50%;
         @include button-hover;
         @include text-style($georgia, 20px, 115%, $color-dark-3xl);
@@ -122,7 +176,11 @@
 
             @media screen and (max-width: 512px) {
                 bottom: -52px-20px;
-                left: 55px;
+                left: (7500vw/320);
+            }
+
+            @media screen and (max-width: 320px) {
+                left: 57px;
             }
         }
 
@@ -134,7 +192,11 @@
 
             @media screen and (max-width: 512px) {
                 bottom: -52px-20px;
-                right: 55px;
+                right: (7500vw/320);
+            }
+
+            @media screen and (max-width: 320px) {
+                right: 57px
             }
         }
 
@@ -163,7 +225,9 @@
     &__pet-info {
         @include text-style($georgia, 17px, (130%), $color-dark-3xl);
         letter-spacing: 0.06em;
-        padding: 15px 45px;
+        width: 187px;
+        height: 52px;
+        text-align: center;
         @include buttons-border;
         transition: background-color 0.2s linear;
         cursor: pointer;

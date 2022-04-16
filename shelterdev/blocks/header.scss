@@ -11,7 +11,7 @@
     }
 
     @media screen and (max-width: 767px) {
-        padding: 30px 60px 58px 10px;
+        padding: 30px 0 60px;
     }
 
     &__container {
@@ -25,10 +25,24 @@
                 right: 30px;
             }
         }
+
+        @media screen and (max-width: 512px) {
+            padding: {
+                left: 10px;
+                right: 53px;
+            }
+        }
     }
 
     &__burger {
         display: none;
+        transition: transform 0.15s linear;
+        position: relative;
+
+        &_active {
+            transform: rotate(0.25turn);
+        }
+
         div {
             width: 30px;
             height: 2px;
@@ -60,7 +74,7 @@
         text-decoration: none;
         padding-bottom: 4px;
         @include text-style($arial, 15px, (24/15 * 100%), $color-dark-s);
-        transition: color 0.2s linear;
+        transition: 0.2s linear;
         &:hover {
             color: $color-light-s;
         }

@@ -14,40 +14,41 @@
         />
     </head>
     <body class="page">
-        <header class="header header_light header_sticky">
+        <header class="header header_light">
             <nav class="header__container">
                 <ul class="header__grid">
                     <li>
-                        <a href="#" class="logo logo_light" data-main title="Main page">
+                        <a href="../main/index.html" class="logo logo_light" title="Main page">
                             <h1 class="logo__title">Cozy House</h1>
                             <p class="logo__subtitle">
                                 Shelter for pets in Boston
                             </p>
                         </a>
                     </li>
+                    <li class="header__burger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </li>
                     <li>
                         <a
-                            href="#about"
-                            data-main
-                            class="header__link"
+                            href="../main/index.html#about"
                             title="About"
+                            class="header__link"
                             >About the shelter</a
                         >
                     </li>
                     <li>
                         <a
-                            href="#"
-                            class="header__link header__link_checked"
+                            href="#our-friends"
+                            data-pets
+                            class="header__link  header__link_checked"
                             title="Our pets"
                             >Our pets</a
                         >
                     </li>
                     <li>
-                        <a
-                            href="#help"
-                            data-main
-                            class="header__link"
-                            title="Help"
+                        <a href="../main/index.html#help" class="header__link" title="Help"
                             >Help the shelter</a
                         >
                     </li>
@@ -60,8 +61,8 @@
             </nav>
         </header>
         <main>
-            <section class="our-friends">
-                <div class="our-friends__container">
+            <section id="our-friends" class="our-friends">
+                <div class="our-friends__container our-friends__container_friends-page">
                     <h2 class="our-friends__title">
                         Our friends who are looking for a house
                     </h2>
@@ -187,55 +188,34 @@
             <div class="footer__container">
                 <div class="footer__info">
                     <h2 class="footer__title">For questions and suggestions</h2>
-                    <a href="mailto:" class="footer__link" title="Send email">
-                        <img
-                            src="<%=require('../../assets/icons/icon-email.svg')%>"
-                            alt=""
-                            class="footer__icon"
-                        />
-                        <p>email@shelter.com</p>
+                    <a
+                        href="mailto:"
+                        class="footer__link footer__link_email"
+                        title="Send email"
+                    >
+                        email@shelter.com
                     </a>
                     <a
                         href="tel:136745677554"
-                        class="footer__link"
+                        class="footer__link footer__link_phone"
                         title="Call"
+                        >+13 674 567 75 54</a
                     >
-                        <img
-                            src="<%=require('../../assets/icons/icon-phone.svg')%>"
-                            alt=""
-                            class="footer__icon"
-                        />
-                        <p>+13 674 567 75 54</p>
-                    </a>
-
+                </div>
+                <div class="footer__info">
                     <h2 class="footer__title">We are waiting for your visit</h2>
                     <a
                         href="https://goo.gl/maps/ZXoHohyzWx64g5AN9"
                         target="blank"
-                        class="footer__link"
+                        class="footer__link footer__link_location"
                         title="Our location"
+                        >1 Central Street, Boston (entrance from the store)</a
                     >
-                        <img
-                            src="<%=require('../../assets/icons/icon-marker.svg')%>"
-                            alt=""
-                            class="footer__icon"
-                        />
-                        <p>
-                            1 Central Street, Boston (entrance from the store)
-                        </p>
-                    </a>
                     <a
                         href="https://goo.gl/maps/rHVV5N8jDBR3c3SJ9"
                         target="blank"
-                        class="footer__link"
-                    >
-                        <img
-                            src="<%=require('../../assets/icons/icon-marker.svg')%>"
-                            alt=""
-                            class="footer__icon"
-                            title="Our location"
-                        />
-                        <p>18 South Park, London</p>
+                        class="footer__link footer__link_location"
+                        >18 South Park, London
                     </a>
                 </div>
                 <img
