@@ -10,25 +10,63 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 120px;
+        gap: 80px 120px;
+
+        @media screen and (max-width: 1120px) {
+            padding: {
+                left: 120px;
+                right: 120px;;
+            } 
+        }
+
+        @media screen and (max-width: 964px) {
+            flex-direction: column-reverse;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 42px 25px; 
+            justify-content: center;
+            row-gap: 42px;
+        }
     }
 
     &__article {
+        max-width: 430px;
         display: flex;
         flex-direction: column;
         gap: 25px;
+
     }
 
     &__title {
         @include title(370px, $color-dark-l, start);
+
+        @media screen and (max-width: 767px) {
+            max-width: (27000vw/320);
+            text-align: center;
+        }
+
+        @media screen and (max-width: 512px) {
+            font-size: 25px;
+        }
     }
 
     &__text {
         @include text-style($arial, 15px, 160%, $color-dark-xl);
+        
+        @media screen and (max-width: 767px) {
+            text-align: justify;
+            max-width: (27000vw/320);
+        }
     }
 
     &__figure {
         max-width: 300px;
-        object-fit: cover;
+        object-fit: contain;
+
+        @media screen and (max-width: 512px) {
+            width: (26000vw/320);
+            height: auto;
+        }
     }
 }

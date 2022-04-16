@@ -7,29 +7,74 @@
     &__container {
         max-width: 1280px;
         margin: 0 auto;
-        display: grid;
-        justify-content: center;
+        padding: 80px 183px 100px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        grid-template-columns: fit-content(505px) fit-content(380px);
-        grid-template-rows: repeat(4, minmax(min-content, max-content));
-        column-gap: 30px;
-        row-gap: 20px;
-        grid-template-areas:
-            "donation-dog title"
-            "donation-dog bank-info"
-            "donation-dog card"
-            "donation-dog legal";
-        padding: 80px 40px 100px;
+        gap: 60px 15px;
+
+        @media screen and (max-width: 1200px) {
+            padding: {
+                left: 150px;
+                right: 150px;
+            }
+        }
+
+        @media screen and (max-width: 1120px) {
+            padding: {
+                left: 30px;
+                right: 30px;
+            }
+        }
+
+        @media screen and (max-width: 964px) {
+            flex-direction: column-reverse;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 42px 20px;
+            row-gap: 42px;
+        }
+    }
+
+    &__info {
+        max-width: 380px;
+        min-height: 282px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media screen and (max-width: 767px) {
+            max-width: 70%;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 512px) {
+            max-width: 280px;
+        }
     }
 
     &__title {
-        grid-area: title;
         @include title(300px, $color-dark-l, start);
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 512px) {
+            font-size: 25px;
+            max-width: 220px;
+        }
     }
 
     &__bank-info {
         @include text-style($georgia, 15px, 110%, $color-dark-l);
         letter-spacing: 0.06em;
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+            max-width: 310px;
+        }
     }
 
     &__card {
@@ -42,6 +87,10 @@
         background-color: $color-primary;
         border-radius: 9px;
         position: relative;
+
+        @media screen and (max-width: 767px) {
+            width: 281px;
+        }
     }
 
     &__numbers {
@@ -49,6 +98,11 @@
         text-decoration: none;
         letter-spacing: 0.06em;
         margin-right: 15px;
+
+        @media screen and (max-width: 767px) {
+            font-size: 15px;
+            line-height: 1.1;
+        }
 
         &::before {
             position: absolute;
@@ -64,10 +118,20 @@
 
     &__legal {
         @include text-style($arial, 12px, 150%, $color-dark-m);
+
+        @media screen and (max-width: 767px) {
+            text-align: justify;
+        }
     }
 
     &__figure {
-        grid-area: donation-dog;
-        object-fit: cover;
+        width: 505px;
+        height: 261px;
+        object-fit: contain;
+
+        @media screen and (max-width: 767px) {
+            width: (26000vw/320);
+            height: (13500vw/320);
+        }
     }
 }

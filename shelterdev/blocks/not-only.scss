@@ -1,31 +1,68 @@
-@import './constants.scss';
+@import "./constants.scss";
 
 .not-only {
-    background: url(../../assets/images/noise_transparent.png), $start-screen-gradient;
+    background: url(../../assets/images/noise_transparent.png),
+        $start-screen-gradient;
     background-repeat: repeat;
     margin-top: -180px;
     padding-top: 180px;
 
     &__container {
+        overflow: hidden;
         max-width: 1280px;
         margin: 0 auto;
-        padding: 30px 40px 0;
+        padding: 0 40px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 100px 0;
+
+        @media screen and (max-width: 964px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 0 10px;
+        }
+
     }
 
     &__info {
         margin-top: 163px;
         max-width: 460px;
+
+        @media screen and (max-width: 1100px) {
+            margin-top: 50px;
+        }
+
+        @media screen and (max-width: 964px) {
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 512px) {
+            max-width: (30000vw/320);
+        }
     }
-    
+
     &__title {
         margin: 0 {
             bottom: 42px;
         }
-        max-width: 310px;
+        max-width: 300px;
         @include text-style($georgia, 44px, 130%);
+
+        @media screen and (max-width: 512px) {
+            font-size: 25px;
+            max-width: (20000vw/320);
+        }
     }
 
     &__subtitle {
@@ -47,11 +84,30 @@
         @include button-hover;
         @include text-style($georgia, 17px, 130%, $color-dark-3xl);
         letter-spacing: 0.06em;
+
+        @media screen and (max-width: 964px) {
+            margin: 0 auto;
+        }
+
     }
 
     &__figure {
-        width: 698px;
-        height: 728px;
+        width: (69800%/1200);
+        height: (72800%/1200);
         object-fit: cover;
+
+        @media screen and (max-width: 964px) {
+            width: (56900%/688);
+            height: (59300%/688);
+            position: relative;
+            left: ((768px-569px)/2 - 30px);
+        }
+
+        @media screen and (max-width: 512px) {
+            width: (26000%/300);
+            height: (27200%/300);
+            position: relative;
+            left: ((320px-260px)/2 - 10px);
+        }
     }
 }
