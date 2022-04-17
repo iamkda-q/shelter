@@ -1,0 +1,30 @@
+@import "./constants.scss";
+
+.burger-icon {
+    display: none;
+    transition: transform 0.15s linear;
+    position: absolute;
+    right: 53px;
+    top: 51px;
+    z-index: 100;
+
+    &_active {
+        transform: rotate(0.25turn);
+        position: fixed;
+    }
+
+    &_fixed {
+        position: fixed;
+    }
+
+    div {
+        width: 30px;
+        height: 2px;
+        background-color: $color-primary;
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: block;
+    }
+}

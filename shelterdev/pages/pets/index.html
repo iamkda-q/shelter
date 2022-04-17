@@ -14,7 +14,7 @@
         />
     </head>
     <body class="page">
-        <header class="header header_light">
+        <header class="header header_light header_sticky">
             <nav class="header__container">
                 <ul class="header__grid">
                     <li>
@@ -24,11 +24,6 @@
                                 Shelter for pets in Boston
                             </p>
                         </a>
-                    </li>
-                    <li class="header__burger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
                     </li>
                     <li>
                         <a
@@ -61,6 +56,52 @@
             </nav>
         </header>
         <main>
+            <div class="burger-icon burger-icon_fixed">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <section class="burger burger_hidden">
+                <nav>
+                    <ul class="burger__container burger__container_hidden">
+                        <li>
+                            <a href="../main/index.html" class="logo" title="Main page">
+                                <h1 class="logo__title">Cozy House</h1>
+                                <p class="logo__subtitle logo__subtitle_burger">
+                                    Shelter for pets in Boston
+                                </p>
+                            </a>
+                        </li>
+                        <li class="burger__item">
+                            <a
+                                href="../main/index.html#about"
+                                title="About"
+                                class="burger__link"
+                                >About the shelter</a
+                            >
+                        </li>
+                        <li class="burger__item">
+                            <a
+                                href="#our-friends"
+                                data-pets
+                                class="burger__link  burger__link_checked"
+                                title="Our pets"
+                                >Our pets</a
+                            >
+                        </li>
+                        <li class="burger__item">
+                            <a href="../main/index.html#help" class="burger__link" title="Help"
+                                >Help the shelter</a
+                            >
+                        </li>
+                        <li class="burger__item">
+                            <a href="#footer" class="burger__link" title="Contacts"
+                                >Contacts</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </section>
             <section id="our-friends" class="our-friends">
                 <div class="our-friends__container our-friends__container_friends-page">
                     <h2 class="our-friends__title">

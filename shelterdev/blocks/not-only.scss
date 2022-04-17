@@ -95,6 +95,7 @@
         width: (69800%/1200);
         height: (72800%/1200);
         object-fit: cover;
+        z-index: 0;
 
         @media screen and (max-width: 964px) {
             width: (56900%/688);

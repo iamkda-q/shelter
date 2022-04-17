@@ -18,6 +18,8 @@ document.querySelectorAll('a[href^="#"').forEach((link) => {
     });
 });
 
+console.log(document.querySelectorAll('a[href^="#"'));
+
 console.log(
     `
     "Самооценка для проверяющего"

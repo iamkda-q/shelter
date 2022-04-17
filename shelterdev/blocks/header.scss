@@ -4,7 +4,6 @@
     /* чтобы хедер был того же цвета что и not-only перекрваем его с помощью отриц margin => смотри not-only */
     padding: 60px 0;
     $this: &;
-    position: relative;
 
     @media screen and (max-width: 1279px) {
         padding-top: 30px;
@@ -34,27 +33,6 @@
         }
     }
 
-    &__burger {
-        display: none;
-        transition: transform 0.15s linear;
-        position: relative;
-
-        &_active {
-            transform: rotate(0.25turn);
-        }
-
-        div {
-            width: 30px;
-            height: 2px;
-            background-color: $color-primary;
-            margin: 10px 0;
-        }
-
-        @media screen and (max-width: 767px) {
-            display: block;
-        }
-    }
-
     &__grid {
         list-style: none;
         align-items: center;
@@ -64,6 +42,7 @@
         display: grid;
         grid-template-columns: 1fr repeat(4, minmax(min-content, max-content));
         column-gap: 35px;
+        position: relative;
 
         @media screen and (max-width: 767px) {
             grid-template-columns: 1fr minmax(min-content, max-content);

@@ -16,6 +16,10 @@
         margin-left: 4px;
         @include text-style($arial, 13px, (15/13 * 100%));
         letter-spacing: 0.1em;
+        
+        &_burger {
+            margin-bottom: 158px;
+        }
     }
 
     &_light {
