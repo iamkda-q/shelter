@@ -1,24 +1,51 @@
 import "./style.scss";
-import '../common/script.js';
+import "../common/script.js";
 
-document.querySelectorAll('a[href^="#"').forEach((link) => {
+const clientHeight = document.documentElement.clientHeight * 0.65; // накидываем класс при достижении секции 65% от высоты окна
+const anchors = document.querySelectorAll('a[href^="#"'); // все якорные ссылки
+anchors.forEach((link) => {
+    let href = link.getAttribute("href").slice(1);
+
+    const scrollTarget = document.querySelector(`#${href}`);
+
     link.addEventListener("click", (e) => {
         e.preventDefault();
 
-        let href = link.getAttribute("href").slice(1);
-
-        const scrollTarget = document.getElementById(href);
-
-        const elementPosition = scrollTarget.getBoundingClientRect().top;
-
+        const { top } = scrollTarget.getBoundingClientRect();
+        console.log(top);
         window.scrollBy({
-            top: elementPosition,
+            top: top,
             behavior: "smooth",
         });
     });
 });
 
-console.log(document.querySelectorAll('a[href^="#"'));
+// const navigationLinks = [
+// /*     ...document.querySelectorAll(".header__link"), */
+//     ...document.querySelectorAll(".burger__link[href^='#'"),
+// ];
+
+// console.log(navigationLinks);
+
+// navigationLinks.forEach((link) => {
+//     window.addEventListener("scroll", () => {
+        
+//         let href = link.getAttribute("href").slice(1);
+        
+//         const scrollTarget = document.querySelector(`#${href}`);
+//         const { top, bottom } = scrollTarget.getBoundingClientRect();
+//         console.log(top, bottom, clientHeight);
+//         if (clientHeight >= top) {
+//             if (clientHeight < bottom) {
+//                 link.classList.add("burger__link_checked");
+//             } else {
+//                 link.classList.remove("burger__link_checked");
+//             }
+//         } else {
+//             link.classList.remove("burger__link_checked");
+//         }
+//     });
+// });
 
 console.log(
     `
@@ -26,11 +53,11 @@ console.log(
 
 Score: 100 / 100.
 
-[60/60] - Создана страница main, сверстаны все блоки и эффекты;
-[60/60] - Создана страница our pets, сверстаны все блоки и эффекты;
+[50/50] - Создана страница main, сверстаны все блоки и эффекты;
+[50/50] - Создана страница our pets, сверстаны все блоки и эффекты;
 
     - Дополнительно
 
-Header смещен относительно макето умышленно, чтобы он не плясал вверх-вниз при переходе с одной страницы на другую.
+Cделано бургер-меню
 `
 );
