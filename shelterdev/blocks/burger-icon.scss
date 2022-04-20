@@ -2,14 +2,14 @@
 
 .burger-icon {
     display: none;
-    transition: transform 0.15s linear;
+    transition: transform 0.3s linear;
     position: absolute;
     right: 53px;
     top: 48px;
     z-index: 100;
 
     &_active {
-        transform: rotate(0.25turn) translate(-2px, 5px);
+        transform: rotate(0.25turn) rotateX(0.5turn) translate(-2px, 5px);
         position: fixed;
     }
 

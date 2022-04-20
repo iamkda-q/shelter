@@ -12,7 +12,6 @@ anchors.forEach((link) => {
         e.preventDefault();
 
         const { top } = scrollTarget.getBoundingClientRect();
-        console.log(top);
         window.scrollBy({
             top: top,
             behavior: "smooth",

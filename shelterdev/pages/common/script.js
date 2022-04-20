@@ -1,15 +1,51 @@
+const page = document.querySelector(".page");
 const burgerIcon = document.querySelector(".burger-icon");
-const burgerMenu = document.querySelector(".burger");
-const burgerContainer = burgerMenu.querySelector(".burger__container");
+const burger = document.querySelector(".burger");
+const burgerMenuContainer = burger.querySelector(".burger__container");
 
-const closeBurger = () => {
-    burgerIcon.classList.toggle("burger-icon_active");
-    burgerMenu.classList.toggle("burger_hidden");
-    burgerContainer.classList.toggle("burger__container_hidden");
+const pageScrollStop = () => {
+    page.style.top = `-${window.pageYOffset}px`;
+    page.classList.add("page_fixed");
+};
+
+burgerMenuContainer.addEventListener("click", (evt) => {
+    evt.stopPropagation();
+});
+
+const pageScrollStart = () => {
+    const yOffset = parseInt(page.style.top) * -1;
+    page.removeAttribute("style");
+    page.classList.remove("page_fixed");
+    window.scrollTo({
+        top: yOffset,
+    });
+};
+
+const closeBurgerMenu = () => {
+    burger.removeEventListener("click", closeBurgerMenu)
+    burgerIcon.classList.remove("burger-icon_active");
+    burger.classList.add("burger_hidden");
+    burgerMenuContainer.classList.add("burger__container_hidden");
+    pageScrollStart();
 }
 
-burgerIcon.addEventListener("click", closeBurger);
+const showBurgerMenu = () => {
+    burger.addEventListener("click", closeBurgerMenu)
+    burgerIcon.classList.add("burger-icon_active");
+    burger.classList.remove("burger_hidden");
+    burgerMenuContainer.classList.remove("burger__container_hidden");
+    pageScrollStop();
+    
+}
 
-burgerContainer.querySelectorAll('a').forEach(link => {
-    link.addEventListener("click", closeBurger)
+burgerIcon.addEventListener("click", () => {
+    if (!burgerIcon.classList.contains("burger-icon_active")) {
+        showBurgerMenu()
+    } else {
+        closeBurgerMenu();
+    }
+});
+
+burgerMenuContainer.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeBurgerMenu);
 });
