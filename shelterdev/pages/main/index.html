@@ -77,7 +77,7 @@
                             <a
                                 href="#about"
                                 title="About"
-                                class="burger__link   burger__link_checked"
+                                class="burger__link burger__link_checked"
                                 >About the shelter</a
                             >
                         </li>
@@ -96,7 +96,10 @@
                             >
                         </li>
                         <li class="burger__item">
-                            <a href="#footer" class="burger__link" title="Contacts"
+                            <a
+                                href="#footer"
+                                class="burger__link"
+                                title="Contacts"
                                 >Contacts</a
                             >
                         </li>
@@ -169,41 +172,7 @@
                         <button
                             class="our-friends__slide our-friends__slide_left"
                         ></button>
-                        <ul class="our-friends__pets">
-                            <li class="our-friends__pet">
-                                <img
-                                    src="<%=require('../../assets/images/pets-katrine.png')%>"
-                                    alt="Katrine's photo"
-                                    class="our-friends__pet-photo"
-                                />
-                                <h3 class="our-friends__pet-name">Katrine</h3>
-                                <button class="our-friends__pet-info">
-                                    Learn more
-                                </button>
-                            </li>
-                            <li class="our-friends__pet">
-                                <img
-                                    src="<%=require('../../assets/images/pets-jennifer.png')%>"
-                                    alt="Jennifer's photo"
-                                    class="our-friends__pet-photo"
-                                />
-                                <h3 class="our-friends__pet-name">Jennifer</h3>
-                                <button class="our-friends__pet-info">
-                                    Learn more
-                                </button>
-                            </li>
-                            <li class="our-friends__pet">
-                                <img
-                                    src="<%=require('../../assets/images/pets-woody.png')%>"
-                                    alt="Woody's photo"
-                                    class="our-friends__pet-photo"
-                                />
-                                <h3 class="our-friends__pet-name">Woody</h3>
-                                <button class="our-friends__pet-info">
-                                    Learn more
-                                </button>
-                            </li>
-                        </ul>
+                        <ul class="our-friends__pets"></ul>
                         <button
                             class="our-friends__slide our-friends__slide_right"
                         ></button>
@@ -373,4 +342,12 @@
             </div>
         </footer>
     </body>
+
+    <template id="our-friends-card">
+        <li class="our-friends__pet">
+            <img src="" alt="" class="our-friends__pet-photo" />
+            <h3 class="our-friends__pet-name"></h3>
+            <button class="our-friends__pet-info">Learn more</button>
+        </li>
+    </template>
 </html>

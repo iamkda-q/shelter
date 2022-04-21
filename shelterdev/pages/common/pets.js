@@ -1,7 +1,16 @@
+import Jennifer from "../../assets/images/pets-jennifer.png";
+import Sophia from "../../assets/images/pets-sophia.png";
+import Woody from "../../assets/images/pets-woody.png";
+import Scarlett from "../../assets/images/pets-scarlett.png";
+import Katrine from "../../assets/images/pets-katrine.png";
+import Timmy from "../../assets/images/pets-timmy.png";
+import Freddie from "../../assets/images/pets-freddie.png";
+import Charly from "../../assets/images/pets-charly.png";
+
 const pets = [
     {
         name: "Jennifer",
-        img: "../../assets/images/jennifer.png",
+        img: Jennifer,
         type: "Dog",
         breed: "Labrador",
         description:
@@ -13,7 +22,7 @@ const pets = [
     },
     {
         name: "Sophia",
-        img: "../../assets/images/sophia.png",
+        img: Sophia,
         type: "Dog",
         breed: "Shih tzu",
         description:
@@ -25,7 +34,7 @@ const pets = [
     },
     {
         name: "Woody",
-        img: "../../assets/images/woody.png",
+        img: Woody,
         type: "Dog",
         breed: "Golden Retriever",
         description:
@@ -37,7 +46,7 @@ const pets = [
     },
     {
         name: "Scarlett",
-        img: "../../assets/images/scarlett.png",
+        img: Scarlett,
         type: "Dog",
         breed: "Jack Russell Terrier",
         description:
@@ -49,7 +58,7 @@ const pets = [
     },
     {
         name: "Katrine",
-        img: "../../assets/images/katrine.png",
+        img: Katrine,
         type: "Cat",
         breed: "British Shorthair",
         description:
@@ -61,7 +70,7 @@ const pets = [
     },
     {
         name: "Timmy",
-        img: "../../assets/images/timmy.png",
+        img: Timmy,
         type: "Cat",
         breed: "British Shorthair",
         description:
@@ -73,7 +82,7 @@ const pets = [
     },
     {
         name: "Freddie",
-        img: "../../assets/images/freddie.png",
+        img: Freddie,
         type: "Cat",
         breed: "British Shorthair",
         description:
@@ -85,7 +94,7 @@ const pets = [
     },
     {
         name: "Charly",
-        img: "../../assets/images/charly.png",
+        img: Charly,
         type: "Dog",
         breed: "Jack Russell Terrier",
         description:
@@ -96,3 +105,5 @@ const pets = [
         parasites: ["lice", "fleas"],
     },
 ];
+
+export default pets;

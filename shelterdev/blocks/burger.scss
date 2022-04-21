@@ -12,6 +12,10 @@
     cursor: pointer;
     z-index: 1;
 
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+
     &_hidden {
         visibility: hidden;
         opacity: 0;

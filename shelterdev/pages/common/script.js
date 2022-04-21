@@ -4,22 +4,16 @@ const burger = document.querySelector(".burger");
 const burgerMenuContainer = burger.querySelector(".burger__container");
 
 const pageScrollStop = () => {
-    page.style.top = `-${window.pageYOffset}px`;
-    page.classList.add("page_fixed");
+    page.style.overflow = `hidden`;
+};
+
+const pageScrollStart = () => {
+    page.style.overflow = `auto`;
 };
 
 burgerMenuContainer.addEventListener("click", (evt) => {
     evt.stopPropagation();
 });
-
-const pageScrollStart = () => {
-    const yOffset = parseInt(page.style.top) * -1;
-    page.removeAttribute("style");
-    page.classList.remove("page_fixed");
-    window.scrollTo({
-        top: yOffset,
-    });
-};
 
 const closeBurgerMenu = () => {
     burger.removeEventListener("click", closeBurgerMenu)
@@ -34,8 +28,7 @@ const showBurgerMenu = () => {
     burgerIcon.classList.add("burger-icon_active");
     burger.classList.remove("burger_hidden");
     burgerMenuContainer.classList.remove("burger__container_hidden");
-    pageScrollStop();
-    
+    pageScrollStop(); 
 }
 
 burgerIcon.addEventListener("click", () => {
