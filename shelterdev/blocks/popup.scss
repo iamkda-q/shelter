@@ -1,0 +1,187 @@
+@import "./constants.scss";
+
+.popup {
+    @include backPopups;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        max-width: 900px;
+        height: 500px;
+        background: $color-light-s;
+        display: flex;
+        border-radius: 9px;
+        position: relative;
+
+         @media screen and (max-width: 1050px) {
+            max-width: 630px;
+            height: 350px;
+        }
+
+        @media screen and (max-width: 767px) {
+            max-width: 240px;
+            height: 341px;
+        }
+    }
+
+    &__photo {
+        max-width: 500px;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 9px;
+
+        @media screen and (max-width: 1050px) {
+            max-width: 350px;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__info {
+        display: flex;
+        padding: 50px 20px 0 30px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @media screen and (max-width: 1050px) {
+            padding: 10px 9px 0 11px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 10px 10px 0;
+            max-width: 240px;
+            align-items: center;
+            ul {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    &__name {
+        @include title(350px, black, start);
+        margin-bottom: 10px;
+
+        @media screen and (max-width: 1050px) {
+            max-width: 260px;
+        }
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+
+/*         @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 512px) {
+            font-size: 25px;
+            max-width: 220px;
+        } */
+    }
+
+    &__type {
+        margin-bottom: 40px;
+        @include text-style($georgia, 20px, 115%, black);
+        letter-spacing: 0.06em;
+        max-width: 350px;
+
+        @media screen and (max-width: 1050px) {
+            margin-bottom: 20px;
+            max-width: 260px;
+        }
+
+        @media screen and (max-width: 767) {
+            max-width: 220px;
+            text-align: center;
+        }
+        
+    }
+
+    &__description {
+        margin-bottom: 42px;
+        @include text-style($georgia, 15px, 110%, black);
+        letter-spacing: 0.06em;
+        max-width: 350px;
+
+        @media screen and (max-width: 1050px) {
+            font-size: 13px;
+            margin-bottom: 20px;
+            max-width: 260px;
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 24px;
+            max-width: 220px;
+            text-align: justify;
+
+        }
+    }
+
+    &__list-item {
+        margin-bottom: 11px;
+        @include text-style($georgia, 15px, 110%, black);
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: $color-primary;
+            margin-right: 10px
+        }
+
+        @media screen and (max-width: 1050px) {
+            margin-bottom: 6px;
+        }
+    }
+
+    &__property {
+        font-weight: 700;
+    }
+
+    &__close-button {
+        padding: 0;
+        width: 52px;
+        height: 52px;
+        position: absolute;
+        bottom: 100%;
+        left: calc(100% - 10px);
+        border: 2px solid $color-primary {
+            radius: 100px;
+        };
+        background: none;
+        cursor: pointer;
+
+        @media screen and (max-width: 767px) {
+            left: calc(100% - 22px);
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(50% - 1px);
+          left: calc(50% - 8px);
+          border-top: 1px solid rgba(41, 41, 41, 1);
+          border-right: 8px solid rgba(41, 41, 41, 1);
+          border-bottom: 1px solid rgba(41, 41, 41, 1);
+          border-left: 8px solid rgba(41, 41, 41, 1);
+        }
+        
+        &::before {
+          transform: rotate(-45deg);
+        }
+        
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+      
+}

@@ -341,13 +341,43 @@
                 />
             </div>
         </footer>
-    </body>
 
-    <template id="our-friends-card">
-        <li class="our-friends__pet">
-            <img src="" alt="" class="our-friends__pet-photo" />
-            <h3 class="our-friends__pet-name"></h3>
-            <button class="our-friends__pet-info">Learn more</button>
-        </li>
-    </template>
+        <div class="popup popup_hidden">
+            <div class="popup__container">
+                <img src="" alt="" class="popup__photo" />
+                <article class="popup__info">
+                    <h2 class="popup__name"></h2>
+                    <h3 class="popup__type"></h3>
+                    <p class="popup__description"></p>
+                    <ul class="popup__list">
+                        <li class="popup__list-item">
+                            <p class="popup__property">Age:&nbsp</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                        <li class="popup__list-item">
+                            <p class="popup__property">Inoculations:&nbsp</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                        <li class="popup__list-item">
+                            <p class="popup__property">Diseases:&nbsp</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                        <li class="popup__list-item">
+                            <p class="popup__property">Parasites:&nbsp;</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                    </ul>
+                </article>
+                <button class="popup__close-button"></button>
+            </div>
+        </div>
+
+        <template id="our-friends-card">
+            <li class="our-friends__pet">
+                <img src="" alt="" class="our-friends__pet-photo" />
+                <h3 class="our-friends__pet-name"></h3>
+                <button class="our-friends__pet-info">Learn more</button>
+            </li>
+        </template>
+    </body>
 </html>

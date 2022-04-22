@@ -45,4 +45,21 @@ $georgia: "Georgia";
     }
 }
 
+@mixin backPopups {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(41, 41, 41, 0.6);
+    opacity: 1;
+    transition: 0.4s linear;
+    // cursor: pointer;
+    z-index: 1;
+
+    &_hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
 
