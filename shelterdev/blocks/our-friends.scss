@@ -185,8 +185,7 @@
         }
 
         &_right {
-            background: url(../../assets/icons/arrow-left.svg) center no-repeat;
-            transform: rotate(0.5turn);
+            background: url(../../assets/icons/arrow-right.svg) center no-repeat;
             position: absolute;
             right: 0px;
 
@@ -251,6 +250,10 @@
         letter-spacing: 0.06em;
 
         @include button-hover;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 60px;
+        }
 
         @media screen and (max-width: 512px) {
             margin-top: 114px;

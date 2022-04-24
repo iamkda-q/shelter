@@ -43,6 +43,10 @@ $georgia: "Georgia";
     &:hover {
         background-color: $color-primary-light;
     }
+    &:active {
+        transform: scale(0.95);
+    }
+
 }
 
 @mixin backPopups {
@@ -54,7 +58,6 @@ $georgia: "Georgia";
     background: rgba(41, 41, 41, 0.6);
     opacity: 1;
     transition: 0.4s linear;
-    // cursor: pointer;
     z-index: 1;
 
     &_hidden {
