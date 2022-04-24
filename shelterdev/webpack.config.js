@@ -58,6 +58,7 @@ module.exports = [
             filename: "script.js",
             assetModuleFilename: '../assets/[hash][ext][query]'
         },
+        devtool: "source-map",
         plugins: [
             new MiniCssExtractPlugin({
                 filename: "index.css",

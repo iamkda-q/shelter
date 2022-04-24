@@ -18,7 +18,11 @@
             <nav class="header__container">
                 <ul class="header__grid">
                     <li>
-                        <a href="../main/index.html" class="logo logo_light" title="Main page">
+                        <a
+                            href="../main/index.html"
+                            class="logo logo_light"
+                            title="Main page"
+                        >
                             <h1 class="logo__title">Cozy House</h1>
                             <p class="logo__subtitle">
                                 Shelter for pets in Boston
@@ -37,13 +41,16 @@
                         <a
                             href="#our-friends"
                             data-pets
-                            class="header__link  header__link_checked"
+                            class="header__link header__link_checked"
                             title="Our pets"
                             >Our pets</a
                         >
                     </li>
                     <li>
-                        <a href="../main/index.html#help" class="header__link" title="Help"
+                        <a
+                            href="../main/index.html#help"
+                            class="header__link"
+                            title="Help"
                             >Help the shelter</a
                         >
                     </li>
@@ -65,7 +72,11 @@
                 <nav>
                     <ul class="burger__container burger__container_hidden">
                         <li>
-                            <a href="../main/index.html" class="logo" title="Main page">
+                            <a
+                                href="../main/index.html"
+                                class="logo"
+                                title="Main page"
+                            >
                                 <h1 class="logo__title">Cozy House</h1>
                                 <p class="logo__subtitle logo__subtitle_burger">
                                     Shelter for pets in Boston
@@ -84,18 +95,24 @@
                             <a
                                 href="#our-friends"
                                 data-pets
-                                class="burger__link  burger__link_checked"
+                                class="burger__link burger__link_checked"
                                 title="Our pets"
                                 >Our pets</a
                             >
                         </li>
                         <li class="burger__item">
-                            <a href="../main/index.html#help" class="burger__link" title="Help"
+                            <a
+                                href="../main/index.html#help"
+                                class="burger__link"
+                                title="Help"
                                 >Help the shelter</a
                             >
                         </li>
                         <li class="burger__item">
-                            <a href="#footer" class="burger__link" title="Contacts"
+                            <a
+                                href="#footer"
+                                class="burger__link"
+                                title="Contacts"
                                 >Contacts</a
                             >
                         </li>
@@ -103,122 +120,37 @@
                 </nav>
             </section>
             <section id="our-friends" class="our-friends">
-                <div class="our-friends__container our-friends__container_friends-page">
+                <div
+                    class="our-friends__container our-friends__container_friends-page"
+                >
                     <h2 class="our-friends__title">
                         Our friends who are looking for a house
                     </h2>
-                    <ul class="our-friends__pets">
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-katrine.png')%>"
-                                alt="Katrine's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Katrine</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-jennifer.png')%>"
-                                alt="Jennifer's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Jennifer</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-woody.png')%>"
-                                alt="Woody's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Woody</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-sophia.png')%>"
-                                alt="Jennifer's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Sophia</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-timmy.png')%>"
-                                alt="Jennifer's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Timmy</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-charly.png')%>"
-                                alt="Jennifer's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Charly</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-scarlett.png')%>"
-                                alt="Jennifer's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Scarlett</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                        <li class="our-friends__pet">
-                            <img
-                                src="<%=require('../../assets/images/pets-freddie.png')%>"
-                                alt="Jennifer's photo"
-                                class="our-friends__pet-photo"
-                            />
-                            <h3 class="our-friends__pet-name">Freddie</h3>
-                            <button class="our-friends__pet-info">
-                                Learn more
-                            </button>
-                        </li>
-                    </ul>
+
+                    <ul class="our-friends__pets"></ul>
+
                     <div class="our-friends__controls">
                         <button
+                        id="first-page"
                             class="our-friends__slide our-friends__slide_disabled"
-                            disabled
                         >
                             &lt;&lt;
                         </button>
                         <button
+                        id="prev-page"
                             class="our-friends__slide our-friends__slide_disabled"
-                            disabled
                         >
                             &lt;
                         </button>
-                        <button
+                        <button id="index-page"
                             class="our-friends__slide our-friends__slide_number"
                         >
                             1
                         </button>
-                        <button class="our-friends__slide our-friends__slide">
+                        <button id="next-page" class="our-friends__slide">
                             &gt;
                         </button>
-                        <button class="our-friends__slide our-friends__slide">
+                        <button id="last-page" class="our-friends__slide">
                             &gt;&gt;
                         </button>
                     </div>
@@ -266,5 +198,43 @@
                 />
             </div>
         </footer>
+
+        <div class="popup popup_hidden">
+            <div class="popup__container">
+                <img src="" alt="" class="popup__photo" />
+                <article class="popup__info">
+                    <h2 class="popup__name"></h2>
+                    <h3 class="popup__type"></h3>
+                    <p class="popup__description"></p>
+                    <ul class="popup__list">
+                        <li class="popup__list-item">
+                            <p class="popup__property">Age:&nbsp</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                        <li class="popup__list-item">
+                            <p class="popup__property">Inoculations:&nbsp</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                        <li class="popup__list-item">
+                            <p class="popup__property">Diseases:&nbsp</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                        <li class="popup__list-item">
+                            <p class="popup__property">Parasites:&nbsp;</p>
+                            <p class="popup__mean"></p>
+                        </li>
+                    </ul>
+                </article>
+                <button class="popup__close-button"></button>
+            </div>
+        </div>
+
+        <template id="our-friends-card">
+            <li class="our-friends__pet">
+                <img src="" alt="" class="our-friends__pet-photo" />
+                <h3 class="our-friends__pet-name"></h3>
+                <button class="our-friends__pet-info">Learn more</button>
+            </li>
+        </template>
     </body>
 </html>
