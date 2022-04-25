@@ -1,7 +1,7 @@
 import "./style.scss";
 import pets from "../common/pets.js";
-import '../common/burgerMenu.js';
-import {renderCards, removeCards} from "../common/cards.js";
+import "../common/burgerMenu.js";
+import { renderCards, removeCards, renderCardsAnimation } from "../common/cards.js";
 
 /* Модуль указания ссылок в разработке */
 const clientHeight = document.documentElement.clientHeight * 0.65; // накидываем класс при достижении секции 65% от высоты окна
@@ -50,16 +50,48 @@ function updateCards() {
     otherPets = [...previousPets, ...otherPets];
 }
 
-slideButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        updateCards();
-        removeCards();
-        renderCards(currentPets);
-    });
-});
-
 calculateCardsQuantity();
 renderCards(currentPets);
+
+slideButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        let cards = document.querySelectorAll(".our-friends__pet");
+        cards.forEach((card) => {
+            const animationCard = card.animate(
+                [
+                    { transform: "translateY(0)" },
+                    { transform: "translateY(600px)" },
+                ],
+                {
+                    duration: 400,
+                }
+            );
+            animationCard.addEventListener("finish", function () {
+                card.style.transform = "translateY(600px)";
+                updateCards();
+                removeCards();
+                renderCardsAnimation(currentPets, item => {
+                    item.style.transform = "translateY(-600px)";
+                })
+                cards = document.querySelectorAll(".our-friends__pet");
+                cards.forEach((card, index) => {
+                    const animationCard = card.animate(
+                        [
+                            { transform: `translateY(${-600-index*200}px)` },
+                            { transform: "translateY(0)" },
+                        ],
+                        {
+                            duration: 400 + index*200,
+                        }
+                    );
+                    animationCard.addEventListener("finish", function () {
+                        card.style.transform = "translateY(0)";
+                    });
+                });
+            });
+        });
+    });
+});
 
 // const navigationLinks = [
 // /*     ...document.querySelectorAll(".header__link"), */

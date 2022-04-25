@@ -25,11 +25,19 @@ const renderCards = (jsonPets) => {
     cards.forEach((card) => petsCards.append(card));
 };
 
+const renderCardsAnimation = (jsonPets, callbackAnimation) => {
+    const cards = jsonPets.map((pet) => generatePetCard(pet));
+    cards.forEach((card) => {
+        callbackAnimation(card);
+        petsCards.append(card);
+    });
+};
+
 const removeCards = () => {
     Array.from(petsCards.childNodes).forEach((child) => {
         child.remove();
     });
 };
 
-export {renderCards, removeCards};
+export {renderCards, removeCards, renderCardsAnimation};
 
