@@ -173,13 +173,13 @@
         @include text-style($georgia, 20px, 115%, $color-dark-3xl);
         width: 52px;
         height: 52px;
-        z-index: 1;
         overflow: hidden;
 
         &_left {
             background: url(../../assets/icons/arrow-left.svg) center no-repeat;
             position: absolute;
             left: 0px;
+            z-index: 1;
 
             @media screen and (max-width: 512px) {
                 bottom: 42px;
@@ -195,6 +195,7 @@
             background: url(../../assets/icons/arrow-right.svg) center no-repeat;
             position: absolute;
             right: 0px;
+            z-index: 1;
 
             @media screen and (max-width: 512px) {
                 bottom: 42px;

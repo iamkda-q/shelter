@@ -55,6 +55,7 @@ renderCards(currentPets);
 
 slideButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        updateCards();
         let cards = document.querySelectorAll(".our-friends__pet");
         cards.forEach((card) => {
             const animationCard = card.animate(
@@ -68,7 +69,6 @@ slideButtons.forEach((button) => {
             );
             animationCard.addEventListener("finish", function () {
                 card.style.transform = "translateY(600px)";
-                updateCards();
                 removeCards();
                 renderCardsAnimation(currentPets, item => {
                     item.style.transform = "translateY(-600px)";
