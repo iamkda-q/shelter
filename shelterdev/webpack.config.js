@@ -10,7 +10,7 @@ module.exports = [
             // pets: "./pages/pets/script.js",
         },
         output: {
-            path: path.resolve(__dirname, "dist/main"),
+            path: path.resolve(__dirname, "dist/shelter/main"),
             filename: "script.js",
             assetModuleFilename: '../assets/[hash][ext][query]'
         },
@@ -54,7 +54,7 @@ module.exports = [
             pets: "./pages/pets/script.js",
         },
         output: {
-            path: path.resolve(__dirname, "dist/pets"),
+            path: path.resolve(__dirname, "dist/shelter/pets"),
             filename: "script.js",
             assetModuleFilename: '../assets/[hash][ext][query]'
         },
@@ -96,7 +96,7 @@ module.exports = [
             index: "./pages/script.js",
         },
         output: {
-            path: path.resolve(__dirname, "dist"),
+            path: path.resolve(__dirname, "dist/shelter"),
             filename: "script.js",
         },
         plugins: [
