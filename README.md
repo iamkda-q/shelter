@@ -1,5 +1,5 @@
 # Репозиторий с тасками Stage 1 от Rolling Scope School
-## Проект Shelter:
+## Проект [Shelter](https://github.com/iamkda-q/shelter/tree/shelter):
 ### Технологии:
 + HTML + SCSS;
 + БЭМ;
